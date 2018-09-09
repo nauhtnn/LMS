@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS `lms`;
+
+USE `lms`;
+
+CREATE TABLE IF NOT EXISTS `lms_student` (
+	`id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	`name` VARCHAR(64) CHARACTER SET `utf8`,
+	`birdate` DATE,
+	`phone` VARCHAR(16)
+);
+
+CREATE TABLE IF NOT EXISTS `lms_class_type` (
+	`id` SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	`name` VARCHAR(64) CHARACTER SET `utf8`,
+	`n_period` SMALLINT
+);
+
+CREATE TABLE IF NOT EXISTS `lms_class` (
+	`year` SMALLINT,
+	`annual_id` TINYINT,
+	`type_id` SMALLINT UNSIGNED,
+	`teac_name` VARCHAR(64) CHARACTER SET `utf8`,
+	`start` DATE,
+	`end` DATE,
+	PRIMARY KEY(`year`, `annual_id`, `type_id`),
+	FOREIGN KEY(`type_id`) REFERENCES `lms_class_type`(`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `lms_class_student` (
+	`year` SMALLINT,
+	`annual_id` TINYINT,
+	`type_id` SMALLINT UNSIGNED,
+	`stu_id` INT(16),
+	`start` DATE,
+	`end` DATE,
+	`tuition` BOOL,
+	PRIMARY KEY(`year`, `annual_id`, `type_id`, `stu_id`),
+	FOREIGN KEY(`year`, `annual_id`, `type_id`) REFERENCES `lms_class`(`year`, `annual_id`, `type_id`)
+);

@@ -1,17 +1,17 @@
 ﻿<?php
-require_once("Student.php");
+//require_once("Student.php");
+require_once("ClassType.php");
 
-$fname = "webdictionary.txt";
+//$fname = "webdictionary.txt";
+$fname = "classType.txt";
 $myfile = fopen($fname, "r") or die("Unable to open file!");
 $dat = fread($myfile, filesize($fname));
 fclose($myfile);
 
-$token = strtok($dat, "\n");
-while ($token !== false)
-{
-	$student = new Student();
-	$student->Parse($token);
-	echo $student->mPrint()."<br>";
-	$token = strtok("\n");
-}
+// $vStu = new StudentList();
+// $vStu->Parse($dat);
+// $vStu->mPrint();
+$vClsType = new ClassTypeList();
+$vClsType->Parse($dat);
+$vClsType->mPrint();
 ?> 
