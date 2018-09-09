@@ -1,0 +1,9 @@
+Tin học thiếu nhi 1	32
+Tin học thiếu nhi 2	32
+Tin học cơ bản	95
+Tin học nâng cao	110
+Luyện thi IC3	36
+Luyện thi MOS Word	36
+Luyện thi MOS Excel	36
+Luyện thi MOS Powerpoint	36
+ACBN	36

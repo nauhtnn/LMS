@@ -1,0 +1,9 @@
+TOEIC 300-500	120
+Tiếng Hoa 1	120
+Tiếng Hoa 2	120
+Tiếng Hoa 3	120
+Tiếng Hoa 4	120
+Tiếng Hàn 1	120
+Tiếng Hàn 2	120
+Tiếng Hàn 3	120
+Tiếng Hàn 4	120
