@@ -6,11 +6,12 @@ if ($_FILES['fileToUpload']['error'] != UPLOAD_ERR_OK
 	exit();
 }
 
-require_once("ClassType.php");
+require_once("CourseType.php");
+
 $dat = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-$vClsType = new ClassTypeList();
-$vClsType->Parse($dat);
-$vClsType->Ins();
-header('Location: classTypePage.php', true, 301);
+$vCrsType = new CourseTypeList();
+$vCrsType->Parse($dat);
+$vCrsType->Ins();
+header('Location: courseTypePage.php', true, 301);
 exit();
 ?>

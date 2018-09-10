@@ -1,0 +1,26 @@
+{
+Trong soạn thảo Word, để soạn thảo và định dạng văn bản như mẫu, bạn sử dụng
+{images/1.png}
+}
+Bullets and Numbering
+\Định dạng Font, Tab và WordArt
+Textbox
+Cả 3 lựa chọn trên
+{  
+Trong PowerPoint, để chèn lệnh thực hiện
+ cho nút thao tác (action button), bạn sử dụng lựa chọn nào?
+ }
+Click chọn biểu tượng {images/6-1.png} (Object) trên nhóm Text của Tab Insert
+Click chọn biểu tượng {images/6-2.png} (Hyperlink) trên nhóm Links của Tab Insert
+\Click chọn biểu tượng {images/6-3.png} (Action) trên nhóm Links của Tab Insert
+Cả 3 lựa chọn đều sai
+{	
+Cho bảng số liệu tiền lương nhân viên như sau
+{images/2.png}
+Dùng hai ký tự cuối cùng của mã nhân viên tra vào Bảng mã để điền thông tin phòng ban.
+ Công thức nào dưới đây được lập tại ô F6, bạn sử dụng lựa chọn
+ }
+=HLOOKUP(LEFT(D6,2),$H$15:$K$16,2,0)
+=VLOOKUP(RIGHT(D6,2),$H$15:$K$16,2,0)
+=HLOOKUP(D6,$H$15:$K$16,2,0)
+\Tất cả đều sai

@@ -1,5 +1,7 @@
 <?php
-class ClassType {
+require_once('DBConn.php');
+
+class CourseType {
 	public $id;
 	public $name;
 	public $nPeriod;
@@ -27,7 +29,7 @@ class ClassType {
 	}
 }
 
-class ClassTypeList
+class CourseTypeList
 {
 	public $vElem;
 	public function Parse($s)
@@ -36,7 +38,7 @@ class ClassTypeList
 		$token = strtok($s, "\n");
 		while ($token !== false)
 		{
-			$classType = new ClassType(0, "", 0);
+			$classType = new CourseType(0, "", 0);
 			$classType->Parse($token);
 			array_push($this->vElem, $classType);
 			$token = strtok("\n");
@@ -49,26 +51,15 @@ class ClassTypeList
 			echo $elem->mPrint()."<br>";
 	}
 	
-	public static function DBConn()
-	{
-		$servername = "localhost";
-		$username = "root";
-		$password = "1234";
-		$dbname = "lms";
-
-		// Create connection
-		return new mysqli($servername, $username, $password, $dbname);
-	}
-	
 	public function Ins() {
 		if(count($this->vElem) == 0)
 			return;
-		$conn = ClassTypeList::DBConn();
+		$conn = DBConn::Conn();
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
 
-		$sql = "INSERT INTO lms_class_type(name, n_period) VALUES ";
+		$sql = "INSERT INTO lms_course_type(name, n_period) VALUES ";
 		foreach($this->vElem as $elem)
 			$sql .= "('".$elem->name."',".$elem->nPeriod."),";
 		$sql = substr($sql, 0, strlen($sql) - 1);//remove the last comma
@@ -83,18 +74,18 @@ class ClassTypeList
 	}
 	
 	public function Sel() {
-		$conn = ClassTypeList::DBConn();
+		$conn = DBConn::Conn();
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
 		
-		$sql = "SELECT id, name, n_period FROM lms_class_type";
+		$sql = "SELECT id, name, n_period FROM lms_course_type";
 		$result = $conn->query($sql);
 		$this->vElem = array();
 
 		if ($result->num_rows > 0)
 			while($row = $result->fetch_assoc())
-				array_push($this->vElem, new ClassType($row['id'], $row['name'], $row['n_period']));
+				array_push($this->vElem, new CourseType($row['id'], $row['name'], $row['n_period']));
 	}
 }
 ?>
