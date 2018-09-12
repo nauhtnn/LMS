@@ -1,12 +1,16 @@
-Nguyễn Quỳnh Anh	17-8-2011	
-Nguyễn Huỳnh Anh Bảo	29/8/2012	0972953659
-Mai Nguyễn Kỳ Duyên	31/7/2011	01254637040
-Nguyễn Minh Khánh	03-5-2012	0976407402
-Trần Nhật Minh	14-7-2011	01672367467
-Phan Bảo Nam	20-9-2012	01254489684
-Hoàng Kim Ngân	15-9-2011	0969225122
-Phan Thị Quỳnh Như	08-8-2011	01636452051
-Ngô Mai Phương	13-6-2011	01639219569
-Hoàng Thị Như Quỳnh	15-6-2011	0987280155
-Nguyễn Khánh Quỳnh	16-10-2011	0918927402
-Nguyễn Hữu Vinh	07-7-2011	0946789647
+First Friends 1	44
+First Friends 2	44
+Everybody Up Starter	44
+Everybody Up 1	44
+Everybody Up 2	44
+Everybody Up 3	44
+Everybody Up 4	44
+Everybody Up 5	44
+Everybody Up 6	44
+Tiếng Anh A1.1	90
+Tiếng Anh A1.2	90
+Tiếng Anh A2.1	90
+Tiếng Anh A2.2	90
+Tiếng Anh B1.1	90
+Tiếng Anh B1.2	90
+Tiếng Anh giao tiếp	120

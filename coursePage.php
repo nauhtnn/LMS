@@ -1,15 +1,15 @@
 <?php
-require_once('CourseType.php');
+require_once('Course.php');
 
-$vCrsType = new CourseTypeList();
-$vCrsType->Sel();
+$vCrs = new CourseList();
+$vCrs->Sel();
 
 echo '<!DOCTYPE html><html><body>
-<form action="courseTypeIns.php" method="post" enctype="multipart/form-data">
+<form action="courseIns.php" method="post" enctype="multipart/form-data">
     Select file to upload:
     <input type="file" name="fileToUpload">
     <input type="submit" name="submit">
 </form>';
-$vCrsType->mPrint();
+$vCrs->mPrint();
 echo '</body></html>';
 ?>
