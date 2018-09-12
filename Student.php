@@ -40,6 +40,18 @@ class StudentList {
 		}
 	}
 	
+	public function Prep1()
+	{
+		$this->vElem = array();
+	}
+	
+	public function Parse1($s)
+	{
+		$stu = new Student();
+		$stu->Parse($s);
+		array_push($this->vElem, $stu);
+	}
+	
 	public function mPrint()
 	{
 		if(0 < count($this->vElem))
@@ -47,6 +59,50 @@ class StudentList {
 				echo $stu->mPrint()."<br>";
 		else
 			echo "No student has been found!";
+	}
+	
+	public function Ins() {
+		$conn = DBConn::Conn();
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+
+		$sql = "INSERT INTO lms_student VALUES (";
+		
+		foreach($this->vStudent as $stu)
+			$sql .= "('".$elem->name."','".$elem->birdate."','".$elem->phone."'),";
+		$sql = substr($sql, 0, strlen($sql) - 1);//remove the last comma
+
+		if ($conn->query($sql) === TRUE) {
+			echo "New records created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+
+		$conn->close();
+	}
+	
+	public function InsCourseStudent($year, $minor_id, $course_type) {
+		$conn = DBConn::Conn();
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
+		
+		$i_prefx = '('.$year.','.$minor_id.','.$course_type.',';
+
+		$sql = "INSERT INTO lms_course_student VALUES (";
+		
+		// foreach($this->vStudent as $stu)
+			// $sql .= $i_prefx."'".$elem->name."','".$elem->birdate."','".$elem->phone."'),";
+		$sql = substr($sql, 0, strlen($sql) - 1);//remove the last comma
+
+		if ($conn->query($sql) === TRUE) {
+			echo "New records created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+
+		$conn->close();
 	}
 };
 ?>
