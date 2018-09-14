@@ -13,6 +13,6 @@ $vCrs = new CourseList();
 $vCrs->Parse($dat);
 $vCrs->mPrint();
 $vCrs->Ins();
-header('Location: coursePage.php', true, 301);
-exit();
+// header('Location: coursePage.php', true, 301);
+// exit();
 ?>
