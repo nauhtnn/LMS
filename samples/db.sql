@@ -2,6 +2,17 @@ CREATE DATABASE IF NOT EXISTS `lms`;
 
 USE `lms`;
 
+CREATE TABLE IF NOT EXISTS `lms_ttaker` (
+	`tt_name` VARCHAR(64) CHARACTER SET `utf8`,
+	`tt_birthDt` DATE,
+	`tt_birthPlace` VARCHAR(64) CHARACTER SET `utf8`,
+	`tt_testDt` DATE,
+	`tt_passed` BOOL,
+	`tt_testType` TINYINT,
+	`tt_id` SMALLINT,
+	PRIMARY KEY(`tt_testDt`,`tt_testType`,`tt_id`)
+);
+
 CREATE TABLE IF NOT EXISTS `lms_user` (
 	`usr_id` SMALLINT AUTO_INCREMENT PRIMARY KEY,
 	`usr_name` VARCHAR(64) CHARACTER SET `utf8`,

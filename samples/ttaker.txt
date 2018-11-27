@@ -1,0 +1,114 @@
+Nguyễn Thị Lan Anh	2018-01-28	Long An	2018-01-28	1	5	1
+Nguyễn Văn Bé Ba	2018-01-28	Long An	2018-01-28	1	5	2
+Lê Văn Bằng	2018-01-28	Long An	2018-01-28	1	5	3
+Nguyễn Thị Cẩm	2018-01-28	Long An	2018-01-28	0	5	4
+Nguyễn Ngọc Bảo Châu	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	5
+Phạm Tiến Dũng	2018-01-28	Long An	2018-01-28	1	5	6
+Trần Thị Mỹ Duyên	2018-01-28	Long An	2018-01-28	1	5	7
+Nguyễn Văn Hải	2018-01-28	Long An	2018-01-28	1	5	8
+Nguyễn Lê Bích Hạnh	2018-01-28	Long An	2018-01-28	1	5	9
+Nguyễn Thanh Hiền	2018-01-28	Long An	2018-01-28	1	5	10
+Lê Thị Ngọc Hòa	2018-01-28	Long An	2018-01-28	1	5	11
+Bùi Thị Tuyết Hồng	2018-01-28	Long An	2018-01-28	1	5	12
+Phạm Thị Tuyết Hồng	2018-01-28	Long An	2018-01-28	1	5	13
+Đoàn Phi Hùng	2018-01-28	Long An	2018-01-28	1	5	14
+Lê Kim Hùng	2018-01-28	Tiền Giang	2018-01-28	1	5	15
+Nguyễn Phi Hùng	2018-01-28	Long An	2018-01-28	1	5	16
+Trương Gia Huy	2018-01-28	Tiền Giang	2018-01-28	1	5	17
+Võ Hữu Khánh	2018-01-28	Long An	2018-01-28	1	5	18
+Bùi Quang Khôi	2018-01-28	Long An	2018-01-28	1	5	19
+Lê Nguyễn Anh Kiều	2018-01-28	Long An	2018-01-28	1	5	20
+Trương Ngọc Thùy Linh	2018-01-28	Tiền Giang	2018-01-28	1	5	21
+Phạm Toàn Lợi	2018-01-28	Phú Yên	2018-01-28	1	5	22
+Nguyễn Hoàng Mộng Long	2018-01-28	Long An	2018-01-28	1	5	23
+Nguyễn Ngọc Thanh Mai	2018-01-28	Long An	2018-01-28	1	5	24
+Lê Thị Trà Mi	2018-01-28	Long An	2018-01-28	1	5	25
+Phạm Thị Tố My	2018-01-28	Long An	2018-01-28	1	5	26
+Hồ Thị Tuyết Ngân	2018-01-28	Long An	2018-01-28	1	5	27
+Lê Hoàng Kim Ngân	2018-01-28	Long An	2018-01-28	1	5	28
+Lê Thị Kim Ngân	2018-01-28	Long An	2018-01-28	1	5	29
+Huỳnh Thị Như Ngọc	2018-01-28	Long An	2018-01-28	1	5	30
+Lê Thành Nhân	2018-01-28	Long An	2018-01-28	1	5	31
+Lê Thành Nhân	2018-01-28	Long An	2018-01-28	1	5	32
+Phan Văn Nhuần	2018-01-28	Long An	2018-01-28	1	5	33
+Phan Thị Kim Oanh	2018-01-28	Long An	2018-01-28	1	5	34
+Trần Thị Diễm Phúc	2018-01-28	Tiền Giang	2018-01-28	1	5	35
+Lê Thị Kiều Phương	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	36
+Nguyễn Văn Quân	2018-01-28	Long An	2018-01-28	1	5	37
+Nguyễn Ngọc Quyền	2018-01-28	Kiên Giang	2018-01-28	1	5	38
+Đặng Văn Sĩ	2018-01-28	Long An	2018-01-28	1	5	39
+Nguyễn Ngọc Sin	2018-01-28	Long An	2018-01-28	0	5	40
+Bùi Thị Tuyết Sương	2018-01-28	Long An	2018-01-28	1	5	41
+Nguyễn Quang Thái	2018-01-28	Long An	2018-01-28	1	5	42
+Nguyễn Minh Thi	2018-01-28	Hưng Yên	2018-01-28	1	5	43
+Võ Thị Ngọc Thi	2018-01-28	Long An	2018-01-28	1	5	44
+Phan Nguyên Toàn	2018-01-28	Tiền Giang	2018-01-28	1	5	45
+Nguyễn Văn Trạm	2018-01-28	Đồng Tháp	2018-01-28	1	5	46
+Nguyễn Thị Huyền Trân	2018-01-28	Long An	2018-01-28	1	5	47
+Nguyễn Thị Ngọc Trân	2018-01-28	BV Nguyễn Văn Tuyên	2018-01-28	1	5	48
+Ngô Quan Triều	2018-01-28	Long An	2018-01-28	1	5	49
+Phùng Thị Tuyên	2018-01-28	Bắc Giang	2018-01-28	1	5	50
+Nguyễn Thị Út	2018-01-28	Long An	2018-01-28	1	5	51
+Đỗ Thị Thanh Vân	2018-01-28	Long An	2018-01-28	1	5	52
+Trần Thị Thanh Xuân	2018-01-28	Long An	2018-01-28	1	5	53
+Nguyễn Thị Kim Yến	2018-01-28	Long An	2018-01-28	0	5	54
+Võ Ngọc Khả Ái	2018-01-28	Long An	2018-01-28	1	5	55
+Lê Trường An	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	0	5	56
+Nguyễn Bảo Tú Anh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	57
+Nguyễn Ngọc Tú Anh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	58
+Phùng Phan Kim Anh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	59
+Nguyễn Ngọc Thái Bảo	2018-01-28	BV Hùng Vương	2018-01-28	1	5	60
+Trần Mai Bội Bội	2018-01-28	BV Hùng Vương	2018-01-28	1	5	61
+Nguyễn Tấn Đạt	2018-01-28	Long An	2018-01-28	1	5	62
+Bùi Thị Thùy Dương	2018-01-28	Long An	2018-01-28	1	5	63
+Nguyễn Cao Kỳ Hân	2018-01-28	Long An	2018-01-28	1	5	64
+Trương Nguyễn Nhật Hào	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	65
+Mai Vũ Thành Hiển	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	66
+Trần Thị Hiếu	2018-01-28	Long An	2018-01-28	1	5	67
+Nguyễn Thị Thanh Hương	2018-01-28	Long An	2018-01-28	1	5	68
+Từ Quốc Huy	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	69
+Dương Minh Khải	2018-01-28	Củ Chi	2018-01-28	1	5	70
+Hoa Quốc Khang	2018-01-28	Long An	2018-01-28	1	5	71
+Nguyễn Võ Đăng Khoa	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	72
+Lương Thị Kiều Linh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	73
+Nguyễn Thị Trúc Linh	2018-01-28	Long An	2018-01-28	0	5	74
+Trương Vĩnh Lộc	2018-01-28	Long An	2018-01-28	0	5	75
+Huỳnh Thị Bé Lợi	2018-01-28	Long An	2018-01-28	1	5	76
+Phùng Thị Tuyết Mai	2018-01-28	Long An	2018-01-28	0	5	77
+Trần Ngọc Triệu Minh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	78
+Nguyễn Thị Diễm My	2018-01-28	Long An	2018-01-28	1	5	79
+Nguyễn Thị Trà My	2018-01-28	Long An	2018-01-28	1	5	80
+Huỳnh Thị Thu Ngân	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	81
+Mai Thị Kim Ngân	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	82
+Trần Thị Thanh Ngân	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	83
+Trương Thị Hồng Ngân	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	84
+Lê Phạm Hoàng Kim Ngọc	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	85
+Phạm Thị Hồng Ngọc	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	86
+Trần Thái Nguyên	2018-01-28	Long An	2018-01-28	1	5	87
+Nguyễn Thị Bích Nhi	2018-01-28	Xã Long Thắng	2018-01-28	1	5	88
+Trần Thị Tuyết Nhi	2018-01-28	Long An	2018-01-28	1	5	89
+Trần Thị Hồng Nhung	2018-01-28	Long An	2018-01-28	1	5	90
+Nguyễn Ngọc So Ny	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	91
+Võ Thanh Phong	2018-01-28	Long An	2018-01-28	1	5	92
+Nguyễn Văn Phức	2018-01-28	Long An	2018-01-28	1	5	93
+Lê Thị Kiều Phương	2018-01-28	Long An	2018-01-28	1	5	94
+Võ Minh Qui	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	95
+Đoàn Hoa Như Quỳnh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	96
+Hồ Ngọc Hoàn Sơn	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	97
+Lâm Thành Tâm	2018-01-28	BV Hùng Vương	2018-01-28	1	5	98
+Huỳnh Thị Phương Thanh	2018-01-28	Long An	2018-01-28	1	5	99
+Châu Ngọc Thảo	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	100
+Huỳnh Phúc Thịnh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	101
+Trần Thị Kim Thoa	2018-01-28	Long An	2018-01-28	1	5	102
+Trần Thị Minh Thư	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	103
+Nguyễn Yến Thy	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	104
+Nguyễn Thị Ngọc Tiền	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	105
+Trần Thị Ngọc Trinh	2018-01-28	An Giang	2018-01-28	1	5	106
+Võ Nguyễn Hoàng Trinh	2018-01-28	Thành phố Hồ Chí Minh	2018-01-28	1	5	107
+Nguyễn Thị Cẩm Tú	2018-01-28	Long An	2018-01-28	1	5	108
+Nguyễn Thị Hồng Vân	2018-01-28	Long An	2018-01-28	1	5	109
+Võ Trần Thị Yến Vi	2018-01-28	Long An	2018-01-28	1	5	110
+Phan Thanh Xuân	2018-01-28	Long An	2018-01-28	1	5	111
+Nguyễn Trần Thị Phi Yến	2018-01-28	Long An	2018-01-28	1	5	112
+Phạm Thị Hồng Mỹ	2018-01-28	Long An	2018-01-28	1	5	113
+Nguyễn Ngọc Lam Tuyền	2018-01-28	Long An	2018-01-28	1	5	114

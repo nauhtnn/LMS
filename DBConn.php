@@ -7,8 +7,6 @@ class DBConn
 		$username = "root";
 		$password = "1234";
 		$dbname = "lms";
-
-		// Create connection
 		return new mysqli($servername, $username, $password, $dbname);
 	}
 }?>

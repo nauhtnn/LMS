@@ -1,5 +1,4 @@
 <?php
-require_once('DBConn.php');
 require_once('AList.php');
 
 class Course {
@@ -16,7 +15,7 @@ class Course {
 		return $it;
 	}
 	
-	public function Parse($s)
+	public function Parse1($s)
 	{
 		$tokens = preg_split("/\t/", $s);
 		$n = count($tokens);
@@ -28,7 +27,7 @@ class Course {
 			$this->nPeriod = $tokens[2];
 	}
 	
-	public function mPrint()
+	public function mPrint1()
 	{
 		echo $this->code."|".$this->title."|".$this->nPeriod;
 	}

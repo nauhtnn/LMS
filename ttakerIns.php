@@ -6,13 +6,14 @@ if ($_FILES['fileToUpload']['error'] != UPLOAD_ERR_OK
 	exit();
 }
 
-require_once("Course.php");
+require_once("TTaker.php");
 
 $dat = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-$v = new CourseList();
+$v = new TTakerList();
 $v->Parse($dat);
-$v->mPrint();
+// $v->mPrint();
+// echo $v->MkInsQry();
 $v->Ins();
-header('Location: coursePage.php', true, 301);
-exit();
+// header('Location: ttakerPage.php', true, 301);
+// exit();
 ?>

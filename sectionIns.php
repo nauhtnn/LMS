@@ -6,13 +6,13 @@ if ($_FILES['fileToUpload']['error'] != UPLOAD_ERR_OK
 	exit();
 }
 
-require_once("Course.php");
-
+require_once("Section.php");
 $dat = file_get_contents($_FILES['fileToUpload']['tmp_name']);
-$course = new Course(0, 0, 0, 0, 0, 0);
-$course->Parse($dat);
-$course->mPrint();
-$course->Ins();
-header('Location: coursePage.php', true, 301);
-exit();
+$v = new SectionList();
+$v->Parse($dat);
+$v->SetUsr($_POST['usr_id'], $_POST['usr_dt'], $_POST['usr_comment']);
+$v->mPrint();
+// $v->Ins();
+// header('Location: sectionPage.php', true, 301);
+// exit();
 ?>

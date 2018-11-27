@@ -11,7 +11,7 @@ class User {
 		$it->type = $type;
 		return $it;
 	}
-	public function Parse($s) {
+	public function Parse1($s) {
 		$tokens = preg_split("/\t/", $s);
 		$n = count($tokens);
 		if (0 < $n)
@@ -21,7 +21,7 @@ class User {
 		if (2 < $n)
 			$this->type = $tokens[2];
 	}
-	public function mPrint() {
+	public function mPrint1() {
 		echo $this->name."|".$this->passw."|".$this->type;
 	}
 }
@@ -39,7 +39,7 @@ class UserList extends AList {
 		return substr($sql, 0, strlen($sql) - 1);//remove the last comma
 	}
 	
-	protected function MkSelQry() {
+	public function MkSelQry() {
 		return "SELECT usr_name, usr_passw, usr_type FROM lms_user";
 	}
 	
