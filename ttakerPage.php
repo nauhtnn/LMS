@@ -1,6 +1,5 @@
 <?php
 require_once('TTaker.php');
-
 $v = new TTakerList();
 $v->Sel();
 
@@ -10,6 +9,6 @@ echo '<!DOCTYPE html><html><body>
     <input type="file" name="fileToUpload">
     <input type="submit" name="submit">
 </form>';
-$v->mPrint();
+$v->PrintTable();
 echo '</body></html>';
 ?>

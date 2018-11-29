@@ -17,22 +17,22 @@ abstract class AList {
 			$token = strtok("\n");
 		}
 	}
-	public function mPrint()
+	public function PrintText()
 	{
 		if(0 < count($this->vElem))
 			foreach($this->vElem as $elem)
-				echo $elem->mPrint1()."<br>";
+				echo $elem->PrintText()."<br>";
 		else
 			echo "No elem has been found!";
 	}
-	public function mPrint2Table()
+	public function PrintTable()
 	{
 		if(0 < count($this->vElem))
 		{
-			$this->vElem[0]->mPrintTableHeader();
+			$this->vElem[0]->PrintTablePrefix();
 			foreach($this->vElem as $elem)
-				echo $elem->mPrint2Row();
-			$this->vElem[0]->mPrintTableFooter();
+				echo $elem->PrintRow();
+			$this->vElem[0]->PrintTablePostfix();
 		}
 		else
 			echo "No elem has been found!";
@@ -55,7 +55,7 @@ abstract class AList {
 		if ($conn->query($this->MkInsQry()) === TRUE) {
 			echo "New records created successfully";
 		} else {
-			echo "Error: " . $qry . "<br>" . $conn->error;
+			echo "Error: " . $conn->error;
 		}
 		$conn->close();
 	}

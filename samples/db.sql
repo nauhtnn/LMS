@@ -1,16 +1,26 @@
-CREATE DATABASE IF NOT EXISTS `lms`;
+CREATE DATABASE IF NOT EXISTS `lms`
+	DEFAULT CHARACTER SET='utf8'
+	DEFAULT COLLATE='utf8_general_ci';
 
 USE `lms`;
+CREATE TABLE IF NOT EXISTS `lms_test_type` (
+	`tp_id` TINYINT PRIMARY KEY,
+	`tp_name` VARCHAR(16)
+);
 
-CREATE TABLE IF NOT EXISTS `lms_ttaker` (
-	`tt_name` VARCHAR(64) CHARACTER SET `utf8`,
-	`tt_birthDt` DATE,
-	`tt_birthPlace` VARCHAR(64) CHARACTER SET `utf8`,
-	`tt_testDt` DATE,
-	`tt_passed` BOOL,
+INSERT INTO `lms_test_type` VALUES(0, 'En_A'),(1, 'En_B'),(2, 'En_C'),(3, 'IT_A'),(4, 'IT_B'),(5, 'IT_CB'),(6, 'IT_NC');
+
+CREATE TABLE IF NOT EXISTS `lms_test_taker` (
 	`tt_testType` TINYINT,
-	`tt_id` SMALLINT,
-	PRIMARY KEY(`tt_testDt`,`tt_testType`,`tt_id`)
+	`tt_testDate` DATE,
+	`tt_weakID` SMALLINT,
+	`tt_name` VARCHAR(64) CHARACTER SET 'utf8',
+	`tt_name_ai` VARCHAR(64) CHARACTER SET 'utf8',
+	`tt_birthdate` DATE,
+	`tt_birthplace` VARCHAR(64) CHARACTER SET 'utf8',
+	`tt_passed` BOOLEAN,
+	PRIMARY KEY(`tt_testType`,`tt_testDate`,`tt_weakID`),
+	FOREIGN KEY(`tt_testType`) REFERENCES `lms_test_type`(`tp_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `lms_user` (
