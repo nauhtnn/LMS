@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXISTS `lms`
+CREATE DATABASE IF NOT EXISTS `nauhtnn_lms`
 	DEFAULT CHARACTER SET='utf8'
 	DEFAULT COLLATE='utf8_general_ci';
 
-USE `lms`;
+USE `nauhtnn_lms`;
 CREATE TABLE IF NOT EXISTS `lms_test_type` (
 	`tp_id` TINYINT PRIMARY KEY,
 	`tp_name` VARCHAR(16)
