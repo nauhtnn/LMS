@@ -1,0 +1,9 @@
+div,form,input {font-family:arial,sans-serif}
+.lalgitc{font-size:24px;font-weight:bold;text-align:center;color:#a51c30;padding:8px}
+.c{display:inline-block;text-align:center}
+.clr{text-align:center}
+.ml{height:2px;background-color:#a51c30;width:20%;margin-bottom:8px;display:inline-block;text-align:center}
+.m32{margin-left:32px}
+input{font-size:16px}
+#search {height:40px;width:192px;border:0px;background-color:#1c64e7;color:#fff}
+#search:hover{background-color:#a6f4ff}

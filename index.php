@@ -1,17 +1,33 @@
-﻿<?php
-//require_once("Student.php");
-require_once("ClassType.php");
+<?php
+require_once('TTaker.php');
 
-//$fname = "webdictionary.txt";
-$fname = "classType.txt";
-$myfile = fopen($fname, "r") or die("Unable to open file!");
-$dat = fread($myfile, filesize($fname));
-fclose($myfile);
+$v = new TTakerList();
+$searchCriteria = "";
+if(isset($_GET['tt_name'])) {
+	$keyword = htmlspecialchars(lms_trim(remove_accents($_GET['tt_name'])));
+	$searchCriteria = "tt_name_ai LIKE '%".$keyword."%'";
+	unset($_GET['tt_name']);
+}
 
-// $vStu = new StudentList();
-// $vStu->Parse($dat);
-// $vStu->mPrint();
-$vClsType = new ClassTypeList();
-$vClsType->Parse($dat);
-$vClsType->mPrint();
-?> 
+if(isset($_GET['excludedTest'])) {
+	if($searchCriteria != "")
+		$searchCriteria = $searchCriteria." AND ";
+	if($_GET['excludedTest'] == "IT")
+		$searchCriteria = $searchCriteria." tt_testType < 3";
+	else
+		$searchCriteria = $searchCriteria." 2 < tt_testType";
+	unset($_GET['excludedTest']);
+}
+
+if($searchCriteria != "")
+{
+	$v->SetCriteria4SelectQry(" WHERE ".$searchCriteria." ORDER BY tt_name");
+	$v->MkSelQry();
+	$v->Sel();
+}
+
+$page = file_get_contents('idx_tempt.html');
+$page = str_replace('__target', 'index.php', $page);
+$page = str_replace('__searchResult', $v->PrintTable(), $page);
+echo $page;
+?>
