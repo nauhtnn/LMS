@@ -3,10 +3,20 @@ class DBConn
 {
 	public static function Conn()
 	{
-		$servername = "localhost";
-		$username = "root";
-		$password = "1234";
-		$dbname = "lms";
+		if(true)
+		{
+			$servername = "localhost";
+			$username = "root";
+			$password = "1234";
+			$dbname = "nauhtnn_lms";
+		}
+		else
+		{
+			$servername = "localhost";
+			$username = "nauhtnn_root";
+			$password = "ADmin0@12345";
+			$dbname = "nauhtnn_lms";
+		}
 		return new mysqli($servername, $username, $password, $dbname);
 	}
 };
@@ -116,4 +126,12 @@ function remove_accents( $string ) {
 	if(iconv('UTF-8','WINDOWS-1252//IGNORE', $accentInsensitiveStr))
 		error_log('Cannot convert to ANSI: '.$string);
 	return $accentInsensitiveStr;
-}?>
+}
+function lms_trim($s)
+{
+	while(strpos($s, '  '))
+		$s = str_replace('  ', ' ', $s);
+	$s = trim($s);
+	return $s;
+}
+?>

@@ -6,8 +6,8 @@
 <div class='clr'><div class='ml'></div></div>
 <div>
 <form action='__target' method="get">
+	<span class='m32'>Name<input type="text" id='name2search' name="tt_name"></span>
 	<span class='m32'><input id='search' type="submit" name="submit" value="Examinee Search"></span>
-	<span class='m32'>Name<input type="text" name="tt_name"></span>
 	<span class='m32'>Excluded test type
 	<input type="radio" name="excludedTest" value="IT">IT
 	<input type="radio" name="excludedTest" value="EN" checked>English
@@ -15,5 +15,6 @@
 </form>
 </div>
 <div>__searchResult</div>
+<script>document.getElementById("name2search").focus();</script>
 </body>
 </html>

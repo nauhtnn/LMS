@@ -11,9 +11,8 @@ require_once("TTaker.php");
 $dat = file_get_contents($_FILES['fileToUpload']['tmp_name']);
 $v = new TTakerList();
 $v->Parse($dat);
-// $v->PrintTable();
 echo $v->MkInsQry();
-$v->Ins();
-header('Location: index2.php', true, 301);
-exit();
+echo $v->Ins();
+// header('Location: index2.php', true, 301);
+// exit();
 ?>

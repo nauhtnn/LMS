@@ -20,22 +20,26 @@ abstract class AList {
 	public function PrintText()
 	{
 		if(0 < count($this->vElem))
+		{
+			$s = "";
 			foreach($this->vElem as $elem)
-				echo $elem->PrintText()."<br>";
+				$s = $s.$elem->PrintText()."<br>";
+			return $s;
+		}
 		else
-			echo "No elem has been found!";
+			return "No elem has been found!";
 	}
 	public function PrintTable()
 	{
 		if(0 < count($this->vElem))
 		{
-			$this->vElem[0]->PrintTablePrefix();
+			$s = $this->vElem[0]->PrintTablePrefix();
 			foreach($this->vElem as $elem)
-				echo $elem->PrintRow();
-			$this->vElem[0]->PrintTablePostfix();
+				$s = $s.$elem->PrintRow();
+			return $s.$this->vElem[0]->PrintTablePostfix();
 		}
 		else
-			echo "No elem has been found!";
+			return "No elem has been found!";
 	}
 	public function Sel() {
 		$conn = DBConn::Conn();
@@ -53,9 +57,9 @@ abstract class AList {
 			die("Connection failed: " . $conn->connect_error);
 		}
 		if ($conn->query($this->MkInsQry()) === TRUE) {
-			echo "New records created successfully";
+			return "New records created successfully";
 		} else {
-			echo "Error: " . $conn->error;
+			return "Error: " . $conn->error;
 		}
 		$conn->close();
 	}

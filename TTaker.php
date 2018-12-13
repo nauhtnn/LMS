@@ -1,5 +1,6 @@
 <?php
 require_once('AList.php');
+require_once('TestType.php');
 class TTaker {
 	public $testType;
 	public $testDate;
@@ -42,29 +43,31 @@ class TTaker {
 		$this->testType = $tokens[0];
 		$this->testDate = $tokens[1];
 		$this->weakID = $tokens[2];
-		$this->name = $tokens[3];
+		$this->name = lms_trim(str_ireplace('\'', '\\\'', substr($tokens[3], 0, 64)));
 		$this->accentInsensitiveName = remove_accents($this->name);
 		$this->birthdate = $tokens[4];
-		$this->birthplace = $tokens[5];
+		$this->birthplace = lms_trim(str_ireplace('\'', '\\\'', substr($tokens[5], 0, 64)));
 		$this->passed = $tokens[6];
 	}
 	public function PrintText() {
-		echo $this->testType."|".$this->weakID."|".$this->name."|".$this->birthdate.
+		return $this->testType."|".$this->weakID."|".$this->name."|".$this->birthdate.
 			"|".$this->birthplace."|".$this->testDate."|".$this->passed;
 	}
 	
 	public function PrintRow() {
-		echo '<tr><td>'.$this->testType.'</td><td>'.$this->testDate.'</td><td>'.$this->weakID.'</td><td>'.$this->name.
-			'</td><td>'.$this->birthdate.'</td><td>'.$this->birthplace.'</td><td>'.$this->passed.'</td></tr>';
+		return '<tr><td>'.TestType::NAME[$this->testType].'</td><td>'.$this->testDate.'</td><td>'.
+			TestType::PREFIX[$this->testType].$this->weakID.'</td><td>'.$this->name.
+			'</td><td>'.$this->birthdate.'</td><td>'.$this->birthplace.'</td><td>'.
+			TestType::RESULT[$this->passed].'</td></tr>';
 	}
 	
 	public function PrintTablePrefix() {
-		echo '<table border=1 style="border-collapse:collapse"><tr><td>Test type</td><td>Test date</td><td>ID of taker</td><td>Name</td><td>birthdate</td>'.
+		return '<table border=1 style="border-collapse:collapse"><tr><td>Test type</td><td>Test date</td><td>ID of taker</td><td>Name</td><td>Birthdate</td>'.
 			'<td>Birthplace</td><td>Passed</td></tr>';
 	}
 	
 	public function PrintTablePostfix() {
-		echo '</table>';
+		return '</table>';
 	}
 }
 
@@ -82,7 +85,6 @@ class TTakerList extends AList {
 		foreach($this->vElem as $elem)
 			$sql .= "(".$elem->testType.",'".$elem->testDate."',".$elem->weakID.",'".
 				$elem->name."','".$elem->accentInsensitiveName."','".$elem->birthdate."','".$elem->birthplace."',".$elem->passed."),";
-		echo $sql;
 		return substr($sql, 0, strlen($sql) - 1);//remove the last comma
 	}
 	
