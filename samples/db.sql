@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS `lms_test_taker` (
 	`tt_name_ai` VARCHAR(64) CHARACTER SET 'utf8',
 	`tt_birthdate` DATE,
 	`tt_birthplace` VARCHAR(64) CHARACTER SET 'utf8',
-	`tt_passed` BOOLEAN,
 	PRIMARY KEY(`tt_testType`,`tt_testDate`,`tt_weakID`),
 	FOREIGN KEY(`tt_testType`) REFERENCES `lms_test_type`(`tp_id`)
 );

@@ -28,20 +28,20 @@ if(isset($_GET['tt_name'])) {
 else
 	$page = str_replace('__name2search', '', $page);
 
-if(isset($_GET['excludedTest'])) {
+if(isset($_GET['testType'])) {
 	if($searchCriteria != "")
 		$searchCriteria = $searchCriteria." AND ";
-	if($_GET['excludedTest'] == "IT") {
-		$searchCriteria = $searchCriteria." tt_testType < 3";
+	if($_GET['testType'] == "IT") {
+		$searchCriteria = $searchCriteria." 2 < tt_testType";
 		$page = checkRadioIT(true, $page);
 	}
 	else {
-		$searchCriteria = $searchCriteria." 2 < tt_testType";
+		$searchCriteria = $searchCriteria." tt_testType < 3";
 		$page = checkRadioIT(false, $page);
 	}
 }
 else
-	$page = checkRadioIT(false, $page);	
+	$page = checkRadioIT(true, $page);
 
 if($searchCriteria != "")
 {

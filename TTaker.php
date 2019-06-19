@@ -9,9 +9,7 @@ class TTaker {
 	public $accentInsensitiveName;
 	public $birthdate;
 	public $birthplace;
-	public $passed;
-	public static function NewWith($testType, $testDate, $weakID, $name, $birthdate, $birthplace,
-		$passed) {
+	public static function NewWith($testType, $testDate, $weakID, $name, $birthdate, $birthplace) {
 		$it = new self();
 		$it->testType = $testType;
 		$it->testDate = $testDate;
@@ -20,7 +18,6 @@ class TTaker {
 		//op_rem	$it->accentInsensitiveName = remove_accents($it->name);
 		$it->birthdate = $birthdate;
 		$it->birthplace = $birthplace;
-		$it->passed = $passed;
 		return $it;
 	}
 	public function Generate() {
@@ -31,12 +28,11 @@ class TTaker {
 		$this->accentInsensitiveName = "gen";
 		$this->birthdate = "2019-01-01";
 		$this->birthplace = "LA";
-		$this->passed = 0;
 	}
 	public function Parse1($s) {
 		$tokens = preg_split("/\t/", $s);
 		$n = count($tokens);
-		if ($n < 7) {
+		if ($n < 5) {
 			Generate();
 			return;
 		}
@@ -47,23 +43,21 @@ class TTaker {
 		$this->accentInsensitiveName = remove_accents($this->name);
 		$this->birthdate = $tokens[4];
 		$this->birthplace = lms_trim(str_ireplace('\'', '\\\'', substr($tokens[5], 0, 64)));
-		$this->passed = $tokens[6];
 	}
 	public function PrintText() {
 		return $this->testType."|".$this->weakID."|".$this->name."|".$this->birthdate.
-			"|".$this->birthplace."|".$this->testDate."|".$this->passed;
+			"|".$this->birthplace."|".$this->testDate;
 	}
 	
 	public function PrintRow() {
 		return '<tr><td>'.TestType::NAME[$this->testType].'</td><td>'.$this->testDate.'</td><td>'.
-			TestType::PREFIX[$this->testType].$this->weakID.'</td><td>'.$this->name.
-			'</td><td>'.$this->birthdate.'</td><td>'.$this->birthplace.'</td><td>'.
-			TestType::RESULT[$this->passed].'</td></tr>';
+			TestType::PREFIX[$this->testType].$this->weakID.'</td><td class="td0">'.$this->name.
+			'</td><td>'.$this->birthdate.'</td><td class="td0">'.$this->birthplace.'</td></tr>';
 	}
 	
 	public function PrintTablePrefix() {
-		return '<table border=1 style="border-collapse:collapse"><tr><td>Test type</td><td>Test date</td><td>ID of taker</td><td>Name</td><td>Birthdate</td>'.
-			'<td>Birthplace</td><td>Passed</td></tr>';
+		return '<table border=1 style="border-collapse:collapse"><tr><th>Test type</th><th>Test date</th><th>ID of taker</th><th>Name</th><th>Birthdate</th>'.
+			'<th>Birthplace</th></tr>';
 	}
 	
 	public function PrintTablePostfix() {
@@ -80,11 +74,11 @@ class TTakerList extends AList {
 	
 	public function MkInsQry() {
 		$sql = "INSERT INTO lms_test_taker(tt_testType, tt_testDate, tt_weakID,
-			tt_name, tt_name_ai, tt_birthdate, tt_birthplace, tt_passed) VALUES ";
+			tt_name, tt_name_ai, tt_birthdate, tt_birthplace) VALUES ";
 		
 		foreach($this->vElem as $elem)
 			$sql .= "(".$elem->testType.",'".$elem->testDate."',".$elem->weakID.",'".
-				$elem->name."','".$elem->accentInsensitiveName."','".$elem->birthdate."','".$elem->birthplace."',".$elem->passed."),";
+				$elem->name."','".$elem->accentInsensitiveName."','".$elem->birthdate."','".$elem->birthplace."'),";
 		return substr($sql, 0, strlen($sql) - 1);//remove the last comma
 	}
 	
@@ -102,7 +96,7 @@ class TTakerList extends AList {
 		if ($result->num_rows > 0)
 			while($row = $result->fetch_assoc()) {
 				array_push($this->vElem, TTaker::NewWith($row['tt_testType'], $row['tt_testDate'], $row['tt_weakID'],
-					$row['tt_name'], $row['tt_birthdate'], $row['tt_birthplace'], $row['tt_passed']));
+					$row['tt_name'], $row['tt_birthdate'], $row['tt_birthplace']));
 			}
 	}
 };
