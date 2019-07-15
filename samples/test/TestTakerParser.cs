@@ -26,7 +26,6 @@ namespace sOf
 		string name;
 		DateTime birthdate;
 		string birthplace;
-		int passed;
 		bool name2column;
 		public static void ReadTestType(string file)
 		{
@@ -87,7 +86,7 @@ namespace sOf
 			string[] attr = line.Split('\t');
 			if(!CheckIdxAndParseID(attr))
 				return false;
-			if(attr.Length < 6)
+			if(attr.Length < 5)
 				return false;
 			if(ParseBirthdate(attr[3]))
 				name2column = false;
@@ -98,7 +97,6 @@ namespace sOf
 				Console.WriteLine("invalid birthdate [3] {0} [4] {1}", attr[3], attr[4]);
 				return false;
 			}
-			int gradeColumn = 6;
 			if(name2column)
 			{
 				name = Program.RemoveDoubleSpace(attr[2] + " " + attr[3]);
@@ -108,18 +106,13 @@ namespace sOf
 			{
 				name = attr[2];
 				birthplace = Program.RemoveDoubleSpace(Program.MapString(attr[4]));
-				gradeColumn = 5;
 			}
-			float t;
-			while(float.TryParse(attr[gradeColumn], out t))
-				++gradeColumn;
-			passed = (0 <= attr[gradeColumn].IndexOf("ỗ")) ? 1 : 0;
 			testDate = TTaker.sTestDate;
 			return true;
 		}
 		override public string ToString() {
 			return testType + "\t" + testDate + "\t" + weakID + "\t" + name + "\t" + birthdate.ToString("yyyy-MM-dd") +
-				"\t" + birthplace + "\t" + passed;
+				"\t" + birthplace;
 		}
 		public static List<TTaker> ParseMultipleLines(string[] lines) {
 			List<TTaker> takers = new List<TTaker>();
