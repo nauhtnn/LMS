@@ -23,11 +23,13 @@ CREATE TABLE IF NOT EXISTS `lms_test_taker` (
 );
 
 CREATE TABLE IF NOT EXISTS `lms_user` (
-	`usr_id` SMALLINT AUTO_INCREMENT PRIMARY KEY,
+	`usr_id` VARCHAR(16)  CHARACTER SET `utf8` PRIMARY KEY,
 	`usr_name` VARCHAR(64) CHARACTER SET `utf8`,
 	`usr_passw` CHAR(64),
 	`usr_type` TINYINT
 );
+
+INSERT INTO `lms_user` VALUES('thuan', 'Nguyen Ngoc Thuan', SHA2('1234', 256), 1);
 
 CREATE TABLE IF NOT EXISTS `lms_course` (
 	`crs_code` SMALLINT PRIMARY KEY,

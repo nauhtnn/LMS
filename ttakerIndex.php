@@ -16,7 +16,6 @@ function checkRadioIT($checked, $html) {
 }
 
 $page = file_get_contents('idx_tempt.html');
-$page = str_replace('__target', 'index.php', $page);
 
 $v = new TTakerList();
 $searchCriteria = "";
