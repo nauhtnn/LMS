@@ -1,54 +1,54 @@
 <?php
-require_once('AList.php');
+if(session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+require_once('DBConn.php');
 class User {
-	public $name;
-	public $passw;
-	public $type;
-	public static function NewWith($name, $passw, $type) {
+	private $id;
+	private $name;
+	private $pw;
+	private $type;
+	private $isAuth;
+	public function __construct() { $this->isAuth = false; }
+	public function getName() { return $this->name; }
+	public function getType0() { return $this->type; }
+	public function getAuth() { return $this->isAuth; }
+	public static function NewWith($id, $name, $pw, $type) {
 		$it = new self();
+		$it->id = $id;
 		$it->name = $name;
-		$it->passw = $passw;
+		$it->pw = $pw;
 		$it->type = $type;
 		return $it;
 	}
-	public function Parse1($s) {
-		$tokens = preg_split("/\t/", $s);
-		$n = count($tokens);
-		if (0 < $n)
-			$this->name = $tokens[0];
-		if (1 < $n)
-			$this->passw = hash('sha256', $tokens[1]);
-		if (2 < $n)
-			$this->type = $tokens[2];
+	private function RetrieveUser($qry) {
+		$conn = DBConn::Conn();
+		if ($conn->connect_error)
+			return;
+		$result = $conn->query($qry);
+		if($result == null) {
+			die('Error description: '.mysqli_error($conn));
+		}
+		if ($result->num_rows == 1){
+			$row = $result->fetch_assoc();
+			$this->id = $row['usr_id'];
+			$this->name = $row['usr_name'];
+			$this->type = $row['usr_type'];
+			$this->isAuth = true;
+		}
 	}
-	public function mPrint1() {
-		echo $this->name."|".$this->passw."|".$this->type;
-	}
-}
-
-class UserList extends AList {
-	protected function CreateElem() {
-		return new User();
-	}
-	
-	protected function MkInsQry() {
-		$sql = "INSERT INTO lms_user(usr_name, usr_passw, usr_type) VALUES ";
-		
-		foreach($this->vElem as $elem)
-			$sql .= "('".$elem->name."','".$elem->passw."',".$elem->type."),";
-		return substr($sql, 0, strlen($sql) - 1);//remove the last comma
-	}
-	
-	public function MkSelQry() {
-		return "SELECT usr_name, usr_passw, usr_type FROM lms_user";
-	}
-	
-	protected function ProcSelQry($result)
-	{
-		$this->vElem = array();
-		if ($result->num_rows > 0)
-			while($row = $result->fetch_assoc())
-				array_push($this->vElem, User::NewWith($row['usr_name'], $row['usr_passw'], $row['usr_type']));
+	public function Authenticate() {
+		if(isset($_COOKIE['usr']) && isset($_SESSION[$_COOKIE['usr'].'_'.hash('sha256', $_SERVER['HTTP_USER_AGENT'])])) {
+			$this->RetrieveUser('SELECT * FROM lms_user WHERE usr_id="'.$_COOKIE['usr'].'"');
+			return;//todo
+		}
+		if(isset($_POST['usr']) && isset($_POST['pw'])){
+			$this->RetrieveUser('SELECT * FROM lms_user WHERE usr_id="'.$_POST['usr'].'" AND usr_pw="'.hash('sha256',$_POST['pw']).'"');
+			if($this->isAuth) {
+				$_SESSION[$_POST['usr'].'_'.hash('sha256', $_SERVER['HTTP_USER_AGENT'])] = 1;
+				setcookie('usr', $_POST['usr'], time() + (86400 * 30));
+			}
+		}
 	}
 };
 ?>
