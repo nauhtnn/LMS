@@ -38,17 +38,30 @@ class User {
 		}
 	}
 	public function Authenticate() {
-		if(isset($_COOKIE['usr']) && isset($_SESSION[$_COOKIE['usr'].'_'.hash('sha256', $_SERVER['HTTP_USER_AGENT'])])) {
+		if(isset($_COOKIE['usr']) && isset($_SESSION[$_COOKIE['usr'])) {
 			$this->RetrieveUser('SELECT * FROM lms_user WHERE usr_id="'.$_COOKIE['usr'].'"');
 			return;//todo
 		}
 		if(isset($_POST['usr']) && isset($_POST['pw'])){
 			$this->RetrieveUser('SELECT * FROM lms_user WHERE usr_id="'.$_POST['usr'].'" AND usr_pw="'.hash('sha256',$_POST['pw']).'"');
 			if($this->isAuth) {
-				$_SESSION[$_POST['usr'].'_'.hash('sha256', $_SERVER['HTTP_USER_AGENT'])] = 1;
+				$_SESSION[$_POST['usr']] = 1;
 				setcookie('usr', $_POST['usr'], time() + (86400 * 30));
 			}
 		}
 	}
 };
+
+$usr = new User();
+$usr->Authenticate();
+if($usr->getAuth() == false) {
+	$page = file_get_contents('signIn_tempt.html');
+	if(isset($_POST['usr']))
+		$page = str_replace('usr"', 'usr" value="'.$_POST['usr'].'"', $page);
+	if(isset($_POST['pw']))
+		$page = str_replace('pw"', 'pw" value="'.$_POST['pw'].'"', $page);
+	echo $page;
+	exit();
+}
+
 ?>
