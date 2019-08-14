@@ -1,5 +1,5 @@
 <?php
-require_once('AList.php');
+require_once('../AList.php');
 require_once('TestType.php');
 class TTaker {
 	public $testType;
